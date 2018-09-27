@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="简单版：预览->压缩->上传"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Manjusaka">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/09/14/previewcompressupload/"/>
+
+
+<meta name="description" content="最近一周（做了一周的原因在最后）在做一个巡检功能：后台分配设备给不同角色用户，角色用户在前端读取自己能访问的设备列表，然后对应列表去进行检查，返回信息以及拍照上传回后台。大概就是这个样子滴~H5上传:&amp;lt;input type=&amp;quot;file&amp;quot; accept=&amp;quot;image/*&amp;quot;&amp;gt;,然后利用FileReader、Canvas、FormData这一系列的AP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单版：预览-&gt;压缩-&gt;上传">
+<meta property="og:url" content="http://yoursite.com/2018/09/14/previewcompressupload/index.html">
+<meta property="og:site_name" content="Manjusaka">
+<meta property="og:description" content="最近一周（做了一周的原因在最后）在做一个巡检功能：后台分配设备给不同角色用户，角色用户在前端读取自己能访问的设备列表，然后对应列表去进行检查，返回信息以及拍照上传回后台。大概就是这个样子滴~H5上传:&amp;lt;input type=&amp;quot;file&amp;quot; accept=&amp;quot;image/*&amp;quot;&amp;gt;,然后利用FileReader、Canvas、FormData这一系列的AP">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-27T03:38:01.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单版：预览-&gt;压缩-&gt;上传">
+<meta name="twitter:description" content="最近一周（做了一周的原因在最后）在做一个巡检功能：后台分配设备给不同角色用户，角色用户在前端读取自己能访问的设备列表，然后对应列表去进行检查，返回信息以及拍照上传回后台。大概就是这个样子滴~H5上传:&amp;lt;input type=&amp;quot;file&amp;quot; accept=&amp;quot;image/*&amp;quot;&amp;gt;,然后利用FileReader、Canvas、FormData这一系列的AP">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 简单版：预览->压缩->上传 - Manjusaka </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Manjusaka</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          简单版：预览->压缩->上传
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 14 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h5 id="最近一周（做了一周的原因在最后）在做一个巡检功能：后台分配设备给不同角色用户，角色用户在前端读取自己能访问的设备列表，然后对应列表去进行检查，返回信息以及拍照上传回后台。大概就是这个样子滴"><a href="#最近一周（做了一周的原因在最后）在做一个巡检功能：后台分配设备给不同角色用户，角色用户在前端读取自己能访问的设备列表，然后对应列表去进行检查，返回信息以及拍照上传回后台。大概就是这个样子滴" class="headerlink" title="最近一周（做了一周的原因在最后）在做一个巡检功能：后台分配设备给不同角色用户，角色用户在前端读取自己能访问的设备列表，然后对应列表去进行检查，返回信息以及拍照上传回后台。大概就是这个样子滴~"></a>最近一周（做了一周的原因在最后）在做一个巡检功能：后台分配设备给不同角色用户，角色用户在前端读取自己能访问的设备列表，然后对应列表去进行检查，返回信息以及拍照上传回后台。大概就是这个样子滴~</h5><h5 id="H5上传-lt-input-type-quot-file-quot-accept-quot-image-quot-gt-然后利用FileReader、Canvas、FormData这一系列的API和方法来实现图片预览、压缩、上传等操作"><a href="#H5上传-lt-input-type-quot-file-quot-accept-quot-image-quot-gt-然后利用FileReader、Canvas、FormData这一系列的API和方法来实现图片预览、压缩、上传等操作" class="headerlink" title="H5上传:&lt;input type=&quot;file&quot; accept=&quot;image/*&quot;&gt;,然后利用FileReader、Canvas、FormData这一系列的API和方法来实现图片预览、压缩、上传等操作"></a>H5上传:<code>&lt;input type=&quot;file&quot; accept=&quot;image/*&quot;&gt;</code>,然后利用FileReader、Canvas、FormData这一系列的API和方法来实现图片预览、压缩、上传等操作</h5><pre><code>&lt;div&gt;
+    &lt;div id=&quot;preview&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;upload-wrap upload-item&quot;&gt;
+        &lt;img src=&quot;./static/images/plus (1).png&quot; alt=&quot;上传&quot;&gt;
+        &lt;input type=&quot;file&quot; id=&quot;upload&quot; name=&quot;imageFile[]&quot; accept=&quot;image/jpg, image/jpeg, image/png, image/gif&quot; class=&quot;upload-btn&quot; id=&quot;empty-upload&quot; multiple&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;c&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+define(function (require, exports, module) {
+    require([&apos;./_common&apos;, &apos;jquery&apos;, &apos;config&apos;], function () {
+        $(function () {
+            var upload = document.querySelector(&apos;#upload&apos;)
+            preview = document.querySelector(&apos;#preview&apos;)
+            maxSize = 200 * 1024
+            upload.addEventListener(&apos;change&apos;, function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    compress(this.result);
+                };
+                reader.readAsDataURL(this.files[0]);
+                this.value = null;
+            })
+            //获取mac值并显示在地址详情中
+            var mac = getP(&apos;mac&apos;)
+            $(&apos;.mac&apos;).val(mac)
+            $.ajax({
+                url: &apos;&apos;,
+                type: &quot;POST&quot;,
+                crossDomain: true,
+                dataType: &quot;json&quot;,
+                data: {
+                    mac: mac
+                },
+                success: function (res) {
+                    var _mac = res;
+                    $(&apos;.address&apos;).html(_mac)
+                    $(&apos;#header&apos;).append(res)
+                }
+            })
+            $(document).on(&quot;click&quot;, &quot;.jq_closeimg&quot;, function () {
+                $(this).parents(&apos;.upload-wrap&apos;).remove();
+                var imgAddr = $(this).siblings(&apos;input&apos;).val()
+                $.ajax({
+                    url: &apos;&apos;,
+                    type: &apos;post&apos;,
+                    data: {
+                        absPath: imgAddr
+                    },
+                    success: function (res) {
+                        // console.info(res)
+                    },
+                    error: function (e) {
+                        alert(&apos;error&apos;)
+                    }
+                })
+            })
+            //提交按钮触发事件
+            $(&apos;.btn-submit&apos;).on(&apos;click&apos;, function () {
+            //do something
+            })
+        })
+        //获取url参数
+
+        function getP(n) {
+            var hrefstr, pos, parastr, para, tempstr;
+            hrefstr = window.location.href;
+            pos = hrefstr.indexOf(&quot;?&quot;);
+            parastr = hrefstr.substring(pos + 1);
+            para = parastr.split(&quot;&amp;&quot;);
+            tempstr = &quot;&quot;;
+            for (var i = 0; i &lt; para.length; i++) {
+                tempstr = para[i];
+                pos = tempstr.indexOf(&quot;=&quot;);
+                if (tempstr.substring(0, pos).toLowerCase() == n.toLowerCase()) {
+                    return tempstr.substring(pos + 1);
+                }
+            }
+            return &apos;&apos;;
+        }
+
+        function compress(res) {
+            var img = new Image(),
+                maxH = 400;
+            img.onload = function () {
+                var cvs = document.createElement(&apos;canvas&apos;),
+                    ctx = cvs.getContext(&apos;2d&apos;);
+                if (img.height &gt; maxH) {
+                    img.width *= maxH / img.height;
+                    img.height = maxH;
+                }
+                cvs.width = img.width;
+                cvs.height = img.height;
+                ctx.clearRect(0, 0, cvs.width, cvs.height);
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+                var dataUrl = cvs.toDataURL(&apos;image/jpeg&apos;, 0.5);
+                // 单张上传
+                imgUpload(dataUrl)
+            }
+            img.src = res;
+        }
+
+        function imgUpload(_url) {
+            $.ajax({
+                url: &apos;&apos;,
+                type: &apos;post&apos;,
+                data: {
+                    imageFile: _url
+                },
+                success: function (res) {
+                    if (res.success === true) {
+                        var imgUrl = res.data
+                        var tmp =
+                            &apos;&lt;div class=&quot;upload-wrap upload-item inputfile_gardenmax&quot;&gt;&lt;input name=&quot;imgAddr&quot; type=&quot;hidden&quot; value=&quot;&apos; +
+                            imgUrl +
+                            &apos;&quot;&gt;&lt;b class=&quot;closeimg jq_closeimg&quot;&gt;&lt;img src=&quot;./static/images/close-circle-fill.png&quot; alt=&quot;&quot;&gt;&lt;/b&gt;&lt;img src=&quot;&apos; +
+                            _url + &apos;&quot; alt=&quot;&quot;&gt;&lt;/div&gt;&apos;;
+                        $(&apos;#preview&apos;).append(tmp)
+                    }
+                },
+                error: function (e) {
+                    alert(&apos;error&apos;)
+                }
+            })
+        }
+    })
+})
+</code></pre><h5 id="大致的流程就是这样，做了简单预览-gt-压缩-gt-上传，里面还有许多可优化的地方，比如压缩可以根据原始图片比进行压缩避免变形失真等问题，移动端Android和IOS有不同程度的bug等等问题，仅供参考吧！"><a href="#大致的流程就是这样，做了简单预览-gt-压缩-gt-上传，里面还有许多可优化的地方，比如压缩可以根据原始图片比进行压缩避免变形失真等问题，移动端Android和IOS有不同程度的bug等等问题，仅供参考吧！" class="headerlink" title="大致的流程就是这样，做了简单预览-&gt;压缩-&gt;上传，里面还有许多可优化的地方，比如压缩可以根据原始图片比进行压缩避免变形失真等问题，移动端Android和IOS有不同程度的bug等等问题，仅供参考吧！"></a>大致的流程就是这样，做了简单预览-&gt;压缩-&gt;上传，里面还有许多可优化的地方，比如压缩可以根据原始图片比进行压缩避免变形失真等问题，移动端Android和IOS有不同程度的bug等等问题，仅供参考吧！</h5><h4 id="被Java支配的恐惧"><a href="#被Java支配的恐惧" class="headerlink" title="被Java支配的恐惧"></a><strong>被Java支配的恐惧</strong></h4><h5 id="做了一周时间这个解释起来比较复杂（CEO开会连续两天，大部分在配合后端修改耗时），本人是本地开发的前端部分，接口都是本地配置的nginx转发请求，请求的是由Java编写的后台接口地址，这些代码本地测试过后svn提交到测试服务器1，测试服务器1再由Leader拉取项目到测试服务器2，然后经由多方测试，反馈问题后回本地修bug！相当之繁琐，但更尴尬的是Java后台最初我讲做表单-图片一起上传，跟我讲必须以表单提交，提交过去由于mine-type问题，说处理不了要我改代码。Java跟我规定参数名-string0-string1…我发送请求跟我说必须连续否则接收不到，omg！当时我的心情就是我是谁？我在哪？我在做什么？不由的发出了来自灵魂的疑问：如果有删除操作怎么办？怎么保证随便删除掉还能连续？疯狂循环判断排序？当Java终于解决了参数名必须连续的问题后我们本地测试过轮到Leader走流程，走流程发现图片以FormData上传不好改用base64，base64太长太大又超过服务器的限制2M且服务器的配置不允许更改！然后改单张上传，每添加一张图片就请求一次上传操作，增加了连接数但算是基本满足各方的基本需求！主要来自于被Java支配的恐惧，真的想问我自己写PHP实现可以不可以？期间改了大概3-4次数据传送方式以及格式，FormData、ajax的data对象、string拼接、base64转blob等等，总而言之，如果你和你现在team的后端配合的还不错，那么请且行且珍惜"><a href="#做了一周时间这个解释起来比较复杂（CEO开会连续两天，大部分在配合后端修改耗时），本人是本地开发的前端部分，接口都是本地配置的nginx转发请求，请求的是由Java编写的后台接口地址，这些代码本地测试过后svn提交到测试服务器1，测试服务器1再由Leader拉取项目到测试服务器2，然后经由多方测试，反馈问题后回本地修bug！相当之繁琐，但更尴尬的是Java后台最初我讲做表单-图片一起上传，跟我讲必须以表单提交，提交过去由于mine-type问题，说处理不了要我改代码。Java跟我规定参数名-string0-string1…我发送请求跟我说必须连续否则接收不到，omg！当时我的心情就是我是谁？我在哪？我在做什么？不由的发出了来自灵魂的疑问：如果有删除操作怎么办？怎么保证随便删除掉还能连续？疯狂循环判断排序？当Java终于解决了参数名必须连续的问题后我们本地测试过轮到Leader走流程，走流程发现图片以FormData上传不好改用base64，base64太长太大又超过服务器的限制2M且服务器的配置不允许更改！然后改单张上传，每添加一张图片就请求一次上传操作，增加了连接数但算是基本满足各方的基本需求！主要来自于被Java支配的恐惧，真的想问我自己写PHP实现可以不可以？期间改了大概3-4次数据传送方式以及格式，FormData、ajax的data对象、string拼接、base64转blob等等，总而言之，如果你和你现在team的后端配合的还不错，那么请且行且珍惜" class="headerlink" title="做了一周时间这个解释起来比较复杂（CEO开会连续两天，大部分在配合后端修改耗时），本人是本地开发的前端部分，接口都是本地配置的nginx转发请求，请求的是由Java编写的后台接口地址，这些代码本地测试过后svn提交到测试服务器1，测试服务器1再由Leader拉取项目到测试服务器2，然后经由多方测试，反馈问题后回本地修bug！相当之繁琐，但更尴尬的是Java后台最初我讲做表单+图片一起上传，跟我讲必须以表单提交，提交过去由于mine-type问题，说处理不了要我改代码。Java跟我规定参数名 string0 string1…我发送请求跟我说必须连续否则接收不到，omg！当时我的心情就是我是谁？我在哪？我在做什么？不由的发出了来自灵魂的疑问：如果有删除操作怎么办？怎么保证随便删除掉还能连续？疯狂循环判断排序？当Java终于解决了参数名必须连续的问题后我们本地测试过轮到Leader走流程，走流程发现图片以FormData上传不好改用base64，base64太长太大又超过服务器的限制2M且服务器的配置不允许更改！然后改单张上传，每添加一张图片就请求一次上传操作，增加了连接数但算是基本满足各方的基本需求！主要来自于被Java支配的恐惧，真的想问我自己写PHP实现可以不可以？期间改了大概3-4次数据传送方式以及格式，FormData、ajax的data对象、string拼接、base64转blob等等，总而言之，如果你和你现在team的后端配合的还不错，那么请且行且珍惜~"></a>做了一周时间这个解释起来比较复杂（CEO开会连续两天，大部分在配合后端修改耗时），本人是本地开发的前端部分，接口都是本地配置的nginx转发请求，请求的是由Java编写的后台接口地址，这些代码本地测试过后svn提交到测试服务器1，测试服务器1再由Leader拉取项目到测试服务器2，然后经由多方测试，反馈问题后回本地修bug！相当之繁琐，但更尴尬的是Java后台最初我讲做表单+图片一起上传，跟我讲必须以表单提交，提交过去由于mine-type问题，说处理不了要我改代码。Java跟我规定参数名 string0 string1…我发送请求跟我说必须连续否则接收不到，omg！当时我的心情就是我是谁？我在哪？我在做什么？不由的发出了来自灵魂的疑问：如果有删除操作怎么办？怎么保证随便删除掉还能连续？疯狂循环判断排序？当Java终于解决了参数名必须连续的问题后我们本地测试过轮到Leader走流程，走流程发现图片以FormData上传不好改用base64，base64太长太大又超过服务器的限制2M且服务器的配置不允许更改！然后改单张上传，每添加一张图片就请求一次上传操作，增加了连接数但算是基本满足各方的基本需求！主要来自于被Java支配的恐惧，真的想问我自己写PHP实现可以不可以？期间改了大概3-4次数据传送方式以及格式，FormData、ajax的data对象、string拼接、base64转blob等等，总而言之，如果你和你现在team的后端配合的还不错，那么请且行且珍惜~</h5>
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/09/14/docschina/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">印记中文（国外前端技术挖掘）</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/09/14/changegray/">
+        <span class="next-text nav-default">整站变灰的简易解决方案</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2017 -
+    
+    2018
+    <span class="footer-author">Manjusaka.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

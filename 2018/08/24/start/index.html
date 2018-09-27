@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="服务器到期实例被释放！重整心情写博客~"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Manjusaka">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/08/24/start/"/>
+
+
+<meta name="description" content="阿里云的服务器到期，怪自己没去理会，等到想起来的时候实例已经被释放掉了，苦苦搭建的Lamp环境、https的SSL证书、cdn服务、包括小程序全部宕机，奈何当初使用的还是Mariadb数据库没有实时备份导致数据以及程序被一锅端掉（备份真的是好习惯）！本来技术不强写的文章也没什么人看，不过为了给自己找点存在感，尤其是看了一位同事把工作中每一次遇到的问题都更新到CSDN上去的时候突然觉得不管怎样对于自">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器到期实例被释放！重整心情写博客~">
+<meta property="og:url" content="http://yoursite.com/2018/08/24/start/index.html">
+<meta property="og:site_name" content="Manjusaka">
+<meta property="og:description" content="阿里云的服务器到期，怪自己没去理会，等到想起来的时候实例已经被释放掉了，苦苦搭建的Lamp环境、https的SSL证书、cdn服务、包括小程序全部宕机，奈何当初使用的还是Mariadb数据库没有实时备份导致数据以及程序被一锅端掉（备份真的是好习惯）！本来技术不强写的文章也没什么人看，不过为了给自己找点存在感，尤其是看了一位同事把工作中每一次遇到的问题都更新到CSDN上去的时候突然觉得不管怎样对于自">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-27T03:38:01.363Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="服务器到期实例被释放！重整心情写博客~">
+<meta name="twitter:description" content="阿里云的服务器到期，怪自己没去理会，等到想起来的时候实例已经被释放掉了，苦苦搭建的Lamp环境、https的SSL证书、cdn服务、包括小程序全部宕机，奈何当初使用的还是Mariadb数据库没有实时备份导致数据以及程序被一锅端掉（备份真的是好习惯）！本来技术不强写的文章也没什么人看，不过为了给自己找点存在感，尤其是看了一位同事把工作中每一次遇到的问题都更新到CSDN上去的时候突然觉得不管怎样对于自">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 服务器到期实例被释放！重整心情写博客~ - Manjusaka </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Manjusaka</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          服务器到期实例被释放！重整心情写博客~
+        
+      </h1>
+
+      <time class="post-time">
+          Aug 24 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>阿里云的服务器到期，怪自己没去理会，等到想起来的时候实例已经被释放掉了，苦苦搭建的Lamp环境、https的SSL证书、cdn服务、包括小程序全部宕机，奈何当初使用的还是Mariadb数据库没有实时备份导致数据以及程序被一锅端掉（备份真的是好习惯）！本来技术不强写的文章也没什么人看，不过为了给自己找点存在感，尤其是看了一位同事把工作中每一次遇到的问题都更新到CSDN上去的时候突然觉得不管怎样对于自己是有用的，同时也慢慢意识到自己做过的东西由于时间长不用就会忘记，所以还是记录下来好一点吧！ 有的时候去一家公司面试，总是被问哪些项目哪些技术哪些难点亮点，说实话这是人脑不是电脑，生搬硬背的东西说出来也没什么意思吧？但是大部分时候总是有一个怪圈，生僻的工作中可能永远都不会用到的东西成了考核标准，永远像BAT、TMD看齐，人家用什么面试就问什么，各种框架工具内层原理，每个人都理解的那么透那么明白，为什么vue的作者是尤雨溪，webpack作者Tobias Koppers，所以鉴于此类我决定记录下所有的东西，至少能反映出还是有点东西的！ Nobody cares. So what?</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/08/24/kuayu/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">简便的本地服务器以及跨域</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2017 -
+    
+    2018
+    <span class="footer-author">Manjusaka.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="整站变灰的简易解决方案"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Manjusaka">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/09/14/changegray/"/>
+
+
+<meta name="description" content="&amp;lt;style&amp;gt; html {         filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);     -webkit-filter:grayscale(100%);     } &amp;lt;/style&amp;gt; 效果差不多这个样子滴~ 对于不支持IE滤镜和webkit滤镜的firefox，网上流传一个svg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整站变灰的简易解决方案">
+<meta property="og:url" content="http://yoursite.com/2018/09/14/changegray/index.html">
+<meta property="og:site_name" content="Manjusaka">
+<meta property="og:description" content="&amp;lt;style&amp;gt; html {         filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);     -webkit-filter:grayscale(100%);     } &amp;lt;/style&amp;gt; 效果差不多这个样子滴~ 对于不支持IE滤镜和webkit滤镜的firefox，网上流传一个svg">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://39.108.76.12/wp-content/uploads/2018/09/gray.png">
+<meta property="og:updated_time" content="2018-09-27T03:38:01.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="整站变灰的简易解决方案">
+<meta name="twitter:description" content="&amp;lt;style&amp;gt; html {         filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);     -webkit-filter:grayscale(100%);     } &amp;lt;/style&amp;gt; 效果差不多这个样子滴~ 对于不支持IE滤镜和webkit滤镜的firefox，网上流传一个svg">
+<meta name="twitter:image" content="http://39.108.76.12/wp-content/uploads/2018/09/gray.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 整站变灰的简易解决方案 - Manjusaka </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Manjusaka</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          整站变灰的简易解决方案
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 14 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <pre><code>&lt;style&gt;
+html {    
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    -webkit-filter:grayscale(100%);
+    }
+&lt;/style&gt;
+</code></pre><h5 id="效果差不多这个样子滴"><a href="#效果差不多这个样子滴" class="headerlink" title="效果差不多这个样子滴~"></a>效果差不多这个样子滴~</h5><p><img src="http://39.108.76.12/wp-content/uploads/2018/09/gray.png" alt=""></p>
+<h5 id="对于不支持IE滤镜和webkit滤镜的firefox，网上流传一个svg方案，先定义svg文件如下："><a href="#对于不支持IE滤镜和webkit滤镜的firefox，网上流传一个svg方案，先定义svg文件如下：" class="headerlink" title="对于不支持IE滤镜和webkit滤镜的firefox，网上流传一个svg方案，先定义svg文件如下："></a>对于不支持IE滤镜和webkit滤镜的firefox，网上流传一个svg方案，先定义svg文件如下：</h5><pre><code>&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+&lt;filter id=&quot;grayscale&quot;&gt;
+&lt;feColorMatrix type=&quot;matrix&quot; values=&quot;0.3333 0.3333 0.3333 0 0
+0.3333 0.3333 0.3333 0 0
+0.3333 0.3333 0.3333 0 0
+0  0  0  1 0&quot;&gt;&lt;/feColorMatrix&gt;
+&lt;/filter&gt;
+&lt;/svg&gt;
+</code></pre><h5 id="接下来在页面写入"><a href="#接下来在页面写入" class="headerlink" title="接下来在页面写入:"></a>接下来在页面写入:</h5><pre><code>html {filter: url(desaturate.svg#grayscale);}
+或
+html {filter: url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns=\&apos;http://www.w3.org/2000/svg\&apos;&gt;&lt;filter id=\&apos;grayscale\&apos;&gt;&lt;feColorMatrix type=\&apos;matrix\&apos; values=\&apos;0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\&apos;/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale&quot;);}
+</code></pre><h5 id="当然如果对于要求比较严格且对性能有苛刻要求来说，整站替换颜色以及图片，如果是利用图片托管服务的还会容易一点，不然整站排查替换等等工作，怕是够喝一小壶了"><a href="#当然如果对于要求比较严格且对性能有苛刻要求来说，整站替换颜色以及图片，如果是利用图片托管服务的还会容易一点，不然整站排查替换等等工作，怕是够喝一小壶了" class="headerlink" title="当然如果对于要求比较严格且对性能有苛刻要求来说，整站替换颜色以及图片，如果是利用图片托管服务的还会容易一点，不然整站排查替换等等工作，怕是够喝一小壶了~"></a>当然如果对于要求比较严格且对性能有苛刻要求来说，整站替换颜色以及图片，如果是利用图片托管服务的还会容易一点，不然整站排查替换等等工作，怕是够喝一小壶了~</h5>
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/09/14/previewcompressupload/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">简单版：预览->压缩->上传</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/09/08/layuistartendtime/">
+        <span class="next-text nav-default">layui开始时间-结束时间功能限制</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2017 -
+    
+    2018
+    <span class="footer-author">Manjusaka.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

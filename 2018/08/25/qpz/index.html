@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="vue-cli启动时的警告"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Manjusaka">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/08/25/qpz/"/>
+
+
+<meta name="description" content="首先在命令行启动vue项目的时候console报了警告信息 大致如下： client?1813:147 [WDS] Warnings while compiling. warnings @ client?1813:147 onmessage @ socket.js?ae22:41 EventTarget.dispatchEvent @ sockjs.js?6eea:170 (anonymous)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-cli启动时的警告">
+<meta property="og:url" content="http://yoursite.com/2018/08/25/qpz/index.html">
+<meta property="og:site_name" content="Manjusaka">
+<meta property="og:description" content="首先在命令行启动vue项目的时候console报了警告信息 大致如下： client?1813:147 [WDS] Warnings while compiling. warnings @ client?1813:147 onmessage @ socket.js?ae22:41 EventTarget.dispatchEvent @ sockjs.js?6eea:170 (anonymous)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-27T03:38:01.363Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-cli启动时的警告">
+<meta name="twitter:description" content="首先在命令行启动vue项目的时候console报了警告信息 大致如下： client?1813:147 [WDS] Warnings while compiling. warnings @ client?1813:147 onmessage @ socket.js?ae22:41 EventTarget.dispatchEvent @ sockjs.js?6eea:170 (anonymous)">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> vue-cli启动时的警告 - Manjusaka </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Manjusaka</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          vue-cli启动时的警告
+        
+      </h1>
+
+      <time class="post-time">
+          Aug 25 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>首先在命令行启动vue项目的时候console报了警告信息 大致如下：</p>
+<pre><code>client?1813:147 [WDS] Warnings while compiling.
+warnings @ client?1813:147
+onmessage @ socket.js?ae22:41
+EventTarget.dispatchEvent @ sockjs.js?6eea:170
+(anonymous) @ sockjs.js?6eea:887
+SockJS._transportMessage @ sockjs.js?6eea:885
+EventEmitter.emit @ sockjs.js?6eea:86
+WebSocketTransport.ws.onmessage @ sockjs.js?6eea:2961
+client?1813:153 ./node_modules/webpack/buildin/global.js
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-Admin\node_modules\webpack\buildin\global.js
+    Used by 2 module(s), i. e.
+    C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-Admin\node_modules\vue\dist\vue.esm.js
+* C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-admin\node_modules\webpack\buildin\global.js
+    Used by 2 module(s), i. e.
+    C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-admin\node_modules\punycode\punycode.js
+ @ ./node_modules/webpack/buildin/global.js
+ @ ./node_modules/vue/dist/vue.esm.js
+ @ ./src/main.js
+ @ multi ../vue-admin/node_modules/webpack-dev-server/client?http://localhost:9000 webpack/hot/dev-server ./src/main.js
+warnings @ client?1813:153
+onmessage @ socket.js?ae22:41
+EventTarget.dispatchEvent @ sockjs.js?6eea:170
+(anonymous) @ sockjs.js?6eea:887
+SockJS._transportMessage @ sockjs.js?6eea:885
+EventEmitter.emit @ sockjs.js?6eea:86
+WebSocketTransport.ws.onmessage @ sockjs.js?6eea:2961
+client?1813:153 ./node_modules/webpack/hot/emitter.js
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-Admin\node_modules\webpack\hot\emitter.js
+    Used by 1 module(s), i. e.
+    C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-Admin\node_modules\webpack\hot\dev-server.js
+* C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-admin\node_modules\webpack\hot\emitter.js
+    Used by 1 module(s), i. e.
+    C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-admin\node_modules\webpack-dev-server\client\index.js?http://localhost:9000
+ @ ./node_modules/webpack/hot/emitter.js
+ @ ./node_modules/webpack/hot/dev-server.js
+ @ multi ../vue-admin/node_modules/webpack-dev-server/client?http://localhost:9000 webpack/hot/dev-server ./src/main.js
+warnings @ client?1813:153
+onmessage @ socket.js?ae22:41
+EventTarget.dispatchEvent @ sockjs.js?6eea:170
+(anonymous) @ sockjs.js?6eea:887
+SockJS._transportMessage @ sockjs.js?6eea:885
+EventEmitter.emit @ sockjs.js?6eea:86
+WebSocketTransport.ws.onmessage @ sockjs.js?6eea:2961
+client?1813:153 ./node_modules/webpack/hot/log.js
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-Admin\node_modules\webpack\hot\log.js
+    Used by 2 module(s), i. e.
+    C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-Admin\node_modules\webpack\hot\dev-server.js
+* C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-admin\node_modules\webpack\hot\log.js
+    Used by 1 module(s), i. e.
+    C:\Users\mantu\Desktop\WorkProject\2018.8.23\vue-admin\node_modules\webpack\hot nonrecursive /^\.\/log$/
+ @ ./node_modules/webpack/hot/log.js
+ @ ./node_modules/webpack/hot/dev-server.js
+ @ multi ../vue-admin/node_modules/webpack-dev-server/client?http://localhost:9000 webpack/hot/dev-server ./src/main.js
+warnings @ client?1813:153
+onmessage @ socket.js?ae22:41
+EventTarget.dispatchEvent @ sockjs.js?6eea:170
+(anonymous) @ sockjs.js?6eea:887
+SockJS._transportMessage @ sockjs.js?6eea:885
+EventEmitter.emit @ sockjs.js?6eea:86
+WebSocketTransport.ws.onmessage @ sockjs.js?6eea:2961
+</code></pre><p>一大长串的警告信息，不会影响使用但看起来总觉得不舒服，程序员多少都有点强迫症的关系，因为之前是使用windows的CMD启动的项目，而windows对大小写不敏感，今天使用的Xshell，网上找了下相关信息，提到linux命令行会对大小写敏感，马上对项目目录的路径进行大小写区分，再次启动项目警告信息消失不见了！</p>
+<h5 id="由此可见，在使用git、Xshell此类终端的时候，对大小写还是遵循Linux的大小写敏感规则来使用，就不会出现此类问题！轻微及以上强迫症患者谨记！！！"><a href="#由此可见，在使用git、Xshell此类终端的时候，对大小写还是遵循Linux的大小写敏感规则来使用，就不会出现此类问题！轻微及以上强迫症患者谨记！！！" class="headerlink" title="由此可见，在使用git、Xshell此类终端的时候，对大小写还是遵循Linux的大小写敏感规则来使用，就不会出现此类问题！轻微及以上强迫症患者谨记！！！"></a>由此可见，在使用git、Xshell此类终端的时候，对大小写还是遵循Linux的大小写敏感规则来使用，就不会出现此类问题！轻微及以上强迫症患者谨记！！！</h5>
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/08/27/nospace/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">input不允许输入空格</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/08/24/kuayu/">
+        <span class="next-text nav-default">简便的本地服务器以及跨域</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2017 -
+    
+    2018
+    <span class="footer-author">Manjusaka.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

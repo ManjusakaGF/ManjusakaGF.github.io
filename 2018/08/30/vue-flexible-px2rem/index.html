@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="vue之flexible + px2rem"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Manjusaka">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/08/30/vue-flexible-px2rem/"/>
+
+
+<meta name="description" content="安装淘宝适配库flexiblenpm i lib-flexible --save 在你的main.js中引入flexible import &amp;#39;lib-flexible/flexible&amp;#39;安装px2remLoadernpm install px2rem-loader --save-dev 在build文件夹下的until.js添加配置来使用px2remLoader在cssloader">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue之flexible + px2rem">
+<meta property="og:url" content="http://yoursite.com/2018/08/30/vue-flexible-px2rem/index.html">
+<meta property="og:site_name" content="Manjusaka">
+<meta property="og:description" content="安装淘宝适配库flexiblenpm i lib-flexible --save 在你的main.js中引入flexible import &amp;#39;lib-flexible/flexible&amp;#39;安装px2remLoadernpm install px2rem-loader --save-dev 在build文件夹下的until.js添加配置来使用px2remLoader在cssloader">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-27T03:38:01.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue之flexible + px2rem">
+<meta name="twitter:description" content="安装淘宝适配库flexiblenpm i lib-flexible --save 在你的main.js中引入flexible import &amp;#39;lib-flexible/flexible&amp;#39;安装px2remLoadernpm install px2rem-loader --save-dev 在build文件夹下的until.js添加配置来使用px2remLoader在cssloader">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> vue之flexible + px2rem - Manjusaka </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Manjusaka</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          vue之flexible + px2rem
+        
+      </h1>
+
+      <time class="post-time">
+          Aug 30 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h5 id="安装淘宝适配库flexible"><a href="#安装淘宝适配库flexible" class="headerlink" title="安装淘宝适配库flexible"></a>安装淘宝适配库flexible</h5><p><code>npm i lib-flexible --save</code></p>
+<h5 id="在你的main-js中引入flexible-import-39-lib-flexible-flexible-39"><a href="#在你的main-js中引入flexible-import-39-lib-flexible-flexible-39" class="headerlink" title="在你的main.js中引入flexible import &#39;lib-flexible/flexible&#39;"></a>在你的main.js中引入flexible <code>import &#39;lib-flexible/flexible&#39;</code></h5><h5 id="安装px2remLoader"><a href="#安装px2remLoader" class="headerlink" title="安装px2remLoader"></a>安装px2remLoader</h5><p><code>npm install px2rem-loader --save-dev</code></p>
+<h5 id="在build文件夹下的until-js添加配置来使用px2remLoader"><a href="#在build文件夹下的until-js添加配置来使用px2remLoader" class="headerlink" title="在build文件夹下的until.js添加配置来使用px2remLoader"></a>在build文件夹下的until.js添加配置来使用px2remLoader</h5><h5 id="在cssloaders配置下添加下列代码"><a href="#在cssloaders配置下添加下列代码" class="headerlink" title="在cssloaders配置下添加下列代码:"></a>在cssloaders配置下添加下列代码:</h5><pre><code>const px2remLoader = {
+    loader: &apos;px2rem-loader&apos;,
+    options: {
+      remUnit: 75
+    }
+  }
+</code></pre><h5 id="在generate-loader配置中添加px2remLoader"><a href="#在generate-loader配置中添加px2remLoader" class="headerlink" title="在generate loader配置中添加px2remLoader"></a>在generate loader配置中添加px2remLoader</h5><pre><code>// generate loader string to be used with extract text plugin
+function generateLoaders (loader, loaderOptions) {
+  const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader, px2remLoader]
+
+  if (loader) {
+    loaders.push({
+      loader: loader + &apos;-loader&apos;,
+      options: Object.assign({}, loaderOptions, {
+        sourceMap: options.sourceMap
+      })
+    })
+  }
+
+  // Extract CSS when that option is specified
+  // (which is the case during production build)
+  if (options.extract) {
+    return ExtractTextPlugin.extract({
+      use: loaders,
+      fallback: &apos;vue-style-loader&apos;
+    })
+  } else {
+    return [&apos;vue-style-loader&apos;].concat(loaders)
+  }
+}
+</code></pre><h5 id="就可以自动转换px为rem了，最后附赠一条在组件内引入css文件的末尾一定要加"><a href="#就可以自动转换px为rem了，最后附赠一条在组件内引入css文件的末尾一定要加" class="headerlink" title="就可以自动转换px为rem了，最后附赠一条在组件内引入css文件的末尾一定要加 ;"></a>就可以自动转换px为rem了，最后附赠一条在组件内引入css文件的末尾一定要加 <strong>;</strong></h5><pre><code>&lt;style&gt;
+@import &apos;../static/css/reset.css&apos;;
+&lt;/style&gt;
+</code></pre><h5 id="不然-run-npm-dev的时候可是会报错哟"><a href="#不然-run-npm-dev的时候可是会报错哟" class="headerlink" title="不然 run npm dev的时候可是会报错哟~"></a><strong>不然 <code>run npm dev</code>的时候可是会报错哟~</strong></h5>
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/09/05/upload-preview/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">上传预览 无脑配合后端实现...</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/08/30/vue-router-ng/">
+        <span class="next-text nav-default">vue router 全局守卫</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2017 -
+    
+    2018
+    <span class="footer-author">Manjusaka.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

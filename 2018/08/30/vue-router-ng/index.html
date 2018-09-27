@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="vue router 全局守卫"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Manjusaka">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/08/30/vue-router-ng/"/>
+
+
+<meta name="description" content="这样写全局守卫跳转登陆：router.beforeEach((to, from, next) =&amp;gt; {   // to and from are both route objects   let isLogin = false   if (isLogin) {     next()   } else {     next({       path: &amp;apos;/login&amp;apos;,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue router 全局守卫">
+<meta property="og:url" content="http://yoursite.com/2018/08/30/vue-router-ng/index.html">
+<meta property="og:site_name" content="Manjusaka">
+<meta property="og:description" content="这样写全局守卫跳转登陆：router.beforeEach((to, from, next) =&amp;gt; {   // to and from are both route objects   let isLogin = false   if (isLogin) {     next()   } else {     next({       path: &amp;apos;/login&amp;apos;,">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-27T03:38:01.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue router 全局守卫">
+<meta name="twitter:description" content="这样写全局守卫跳转登陆：router.beforeEach((to, from, next) =&amp;gt; {   // to and from are both route objects   let isLogin = false   if (isLogin) {     next()   } else {     next({       path: &amp;apos;/login&amp;apos;,">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> vue router 全局守卫 - Manjusaka </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Manjusaka</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          vue router 全局守卫
+        
+      </h1>
+
+      <time class="post-time">
+          Aug 30 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h5 id="这样写全局守卫跳转登陆："><a href="#这样写全局守卫跳转登陆：" class="headerlink" title="这样写全局守卫跳转登陆："></a>这样写全局守卫跳转登陆：</h5><pre><code>router.beforeEach((to, from, next) =&gt; {
+  // to and from are both route objects
+  let isLogin = false
+  if (isLogin) {
+    next()
+  } else {
+    next({
+      path: &apos;/login&apos;,
+      query: {redirect: to.fullPath}
+    })
+  }
+})
+</code></pre><h5 id="报错-vue-router-uncaught-error-during-route-navigation"><a href="#报错-vue-router-uncaught-error-during-route-navigation" class="headerlink" title="报错 [vue-router] uncaught error during route navigation:"></a>报错 <code>[vue-router] uncaught error during route navigation:</code></h5><h5 id="lt-failed-to-convert-exception-to-string-gt"><a href="#lt-failed-to-convert-exception-to-string-gt" class="headerlink" title="&lt;failed to convert exception to string&gt;"></a><code>&lt;failed to convert exception to string&gt;</code></h5><h5 id="陷入了死循环，采用下面的写法就可以正常解析了，isLogin可以根据后台传递的变量存入Vuex中来管理"><a href="#陷入了死循环，采用下面的写法就可以正常解析了，isLogin可以根据后台传递的变量存入Vuex中来管理" class="headerlink" title="陷入了死循环，采用下面的写法就可以正常解析了，isLogin可以根据后台传递的变量存入Vuex中来管理"></a>陷入了死循环，采用下面的写法就可以正常解析了，isLogin可以根据后台传递的变量存入Vuex中来管理</h5><pre><code>router.beforeEach((to, from, next) =&gt; {
+  // to and from are both route objects
+  let isLogin = false
+  let path = to.path
+  if (path === &apos;/login&apos;) {
+    next()
+    return
+  }
+  if (isLogin) {
+    next()
+  } else {
+    next({
+      path: &apos;/login&apos;,
+      query: to.fullPath
+    })
+  }
+})
+</code></pre>
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/08/30/vue-flexible-px2rem/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">vue之flexible + px2rem</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/08/29/hexo/">
+        <span class="next-text nav-default">Hexo-简洁且高效的博客框架</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2017 -
+    
+    2018
+    <span class="footer-author">Manjusaka.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="上传预览 无脑配合后端实现..."/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Manjusaka">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/09/05/upload-preview/"/>
+
+
+<meta name="description" content="&amp;lt;body&amp;gt;     &amp;lt;div id=&amp;quot;wrapper&amp;quot;&amp;gt;         &amp;lt;header id=&amp;quot;header&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;javascript:history.go(-1);&amp;quot; class=&amp;quot;back&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/header&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="上传预览 无脑配合后端实现...">
+<meta property="og:url" content="http://yoursite.com/2018/09/05/upload-preview/index.html">
+<meta property="og:site_name" content="Manjusaka">
+<meta property="og:description" content="&amp;lt;body&amp;gt;     &amp;lt;div id=&amp;quot;wrapper&amp;quot;&amp;gt;         &amp;lt;header id=&amp;quot;header&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;javascript:history.go(-1);&amp;quot; class=&amp;quot;back&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/header&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://39.108.76.12/wp-content/uploads/2018/09/Animation.gif">
+<meta property="og:updated_time" content="2018-09-27T03:38:01.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="上传预览 无脑配合后端实现...">
+<meta name="twitter:description" content="&amp;lt;body&amp;gt;     &amp;lt;div id=&amp;quot;wrapper&amp;quot;&amp;gt;         &amp;lt;header id=&amp;quot;header&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;javascript:history.go(-1);&amp;quot; class=&amp;quot;back&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/header&amp;gt;">
+<meta name="twitter:image" content="http://39.108.76.12/wp-content/uploads/2018/09/Animation.gif">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 上传预览 无脑配合后端实现... - Manjusaka </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Manjusaka</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          上传预览 无脑配合后端实现...
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 05 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <pre><code>&lt;body&gt;
+    &lt;div id=&quot;wrapper&quot;&gt;
+        &lt;header id=&quot;header&quot;&gt;&lt;a href=&quot;javascript:history.go(-1);&quot; class=&quot;back&quot;&gt;&lt;/a&gt;&lt;/header&gt;
+        &lt;section class=&quot;container&quot;&gt;
+            &lt;section id=&quot;addr&quot; class=&quot;wrapper&quot;&gt;
+                &lt;p&gt;地址详情&lt;/p&gt;
+                &lt;div class=&quot;content address&quot;&gt;&lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section id=&quot;service-logs&quot; class=&quot;wrapper&quot;&gt;
+                &lt;p&gt;维修日志&lt;/p&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                    &lt;form method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot; id=&quot;upload-form&quot;&gt;
+                        &lt;input type=&quot;hidden&quot; name=&quot;mac&quot; class=&quot;mac&quot; value=&quot;&quot;&gt;
+                        &lt;textarea name=&quot;content&quot; id=&quot;feedback&quot; placeholder=&quot;写点什么...&quot;&gt;&lt;/textarea&gt;
+                        &lt;div class=&quot;upload-wrap upload-item&quot;&gt;
+                            &lt;img src=&quot;./images/plus (1).png&quot; alt=&quot;上传&quot;&gt;
+                            &lt;input type=&quot;file&quot; name=&quot;imageFile1&quot; class=&quot;upload-btn&quot; id=&quot;empty-upload&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;c&quot;&gt;&lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;tips&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;btn-submit&quot;&gt;提交&lt;/div&gt;
+                &lt;div class=&quot;c&quot;&gt;&lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/section&gt;        
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+```javascript
+  $(function(){
+            //点击上传 显示缩略图并新增上传按钮
+            var _index = 1;
+            $(document).on(&quot;change&quot;,&apos;.upload-btn&apos;, function(){
+                _index++;
+                var $this = $(this);
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return;
+                if (/^image/.test(files[0].type)){
+                    var reader = new FileReader();
+                    reader.readAsDataURL(files[0]);
+                    reader.onloadend = function(){
+                        $(&apos;.tips&apos;).hide();
+                        $(&apos;.upload-item&apos;).addClass(&apos;inputfile_gardenmax&apos;)
+                        var temp = &apos;&lt;div class=&quot;upload-wrap upload-item&quot;&gt;&lt;img src=&quot;./images/plus (1).png&quot; alt=&quot;上传&quot;&gt;&lt;input type=&quot;file&quot; name=&quot;imageFile&apos;+ _index +&apos;&quot; class=&quot;upload-btn&quot;&gt;&lt;/div&gt;&apos;;
+                        $this.parent(&apos;.upload-wrap&apos;).after(temp);
+                        var tmp = &apos;&lt;b class=&quot;closeimg jq_closeimg&quot;&gt;&lt;img src=&quot;./images/close-circle-fill.png&quot; alt=&quot;&quot;&gt;&lt;/b&gt;&lt;img src=&quot;&apos;+this.result+&apos;&quot; alt=&quot;&quot;&gt;&apos;;
+                        $this.before(tmp)
+                        //删除上传预览图
+                        $(&quot;.jq_closeimg&quot;).on(&quot;click&quot;, function(){
+                            $(this).parents(&apos;.upload-wrap&apos;).remove();
+                        })
+                    }
+                }
+            });
+            //获取mac值并显示在地址详情中
+            var mac = getP(&apos;mac&apos;)
+            $(&apos;.mac&apos;).val(mac)
+            $.ajax({
+                url :&apos;&apos;,
+                type:&quot;POST&quot;,
+                crossDomain: true,
+                dataType:&quot;json&quot;,
+                data : {
+                    mac: mac
+                },
+                success: function(res){
+                    var _mac = res.others.province+res.others.city+res.others.county+res.build+res.unit+res.room;
+                    $(&apos;.address&apos;).html(_mac)  
+                    $(&apos;#header&apos;).append(res.others.codeNmae)            
+                }
+            })
+            //提交按钮触发事件
+            $(&apos;.btn-submit&apos;).on(&apos;click&apos;, function(){
+                //提交时判断空input上传框(最后一个空input删除避免后台接受FormData错误,上传图片为0张提示信息至少上传一张)
+                var _l = $(&apos;.upload-btn&apos;).parents(&apos;.upload-item&apos;).siblings(&apos;.inputfile_gardenmax&apos;).length;
+                if( _l !== 0){
+                    $(&apos;#upload-form div&apos;).last().prev().remove();
+                }else{
+                    $(&apos;.tips&apos;).html(&apos;至少上传一张图片&apos;).show();
+                    return false;
+                }
+                //实例化FormData 表单数据
+                var fd = new FormData($(&apos;#upload-form&apos;)[0]);
+                $.ajax({
+                    url: &apos;&apos;,
+                    type: &apos;post&apos;,
+                    data: fd,
+                    processData: false,
+                    contentType: false,
+                    success: function(res){
+                        window.location.href = &apos;&apos;
+                    },
+                    error: function(e){
+                        alert(&apos;error&apos;)
+                    }
+                })
+            })
+        })
+        //获取url参数
+        function getP(n) {
+            var hrefstr, pos, parastr, para, tempstr;
+            hrefstr = window.location.href;
+            pos = hrefstr.indexOf(&quot;?&quot;);
+            parastr = hrefstr.substring(pos + 1);
+            para = parastr.split(&quot;&amp;&quot;);
+            tempstr = &quot;&quot;;
+            for (var i = 0; i &lt; para.length; i++) {
+                tempstr = para[i];
+                pos = tempstr.indexOf(&quot;=&quot;);
+                if (tempstr.substring(0, pos).toLowerCase() == n.toLowerCase()) {
+                    return tempstr.substring(pos + 1);
+                }
+            }
+            return &apos;&apos;;
+        }
+</code></pre><p><img src="http://39.108.76.12/wp-content/uploads/2018/09/Animation.gif" alt=""></p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/09/08/layuistartendtime/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">layui开始时间-结束时间功能限制</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/08/30/vue-flexible-px2rem/">
+        <span class="next-text nav-default">vue之flexible + px2rem</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2017 -
+    
+    2018
+    <span class="footer-author">Manjusaka.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
